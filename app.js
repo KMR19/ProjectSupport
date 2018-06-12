@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 // set up port number
-const port = 6020;
+const port = 5035;
 
 // set up route
 app.get('/', (request, respond) => {
@@ -15,5 +15,5 @@ app.get('/', (request, respond) => {
 });
 
 app.listen(port, (request, respond) => {
-  console.log('Our server is live. Yay!');
+  console.log(`Our server is live on ${port}. Yay!`);
 });
