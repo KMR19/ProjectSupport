@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import logger from 'morgan';
+import dotenv from 'dotenv';
 import mainRoutes from './server/routes/main';
 
 const app = express();
@@ -10,9 +11,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
+require('dotenv').config();
 
 // connect to mongoose
-mongoose.connect('mongodb://localhost/projectsupport')
+mongoose.connect(process.env.MONGODB)
   .then(() => {
     console.log('database connected.');
   })
