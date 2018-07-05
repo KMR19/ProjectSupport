@@ -2,10 +2,10 @@
 // home route
 const homeRoute = (app) => {
   app.get('/', (req, res) => {
-    res.redirect('/api');
+    res.redirect('/api/v1');
   });
   
-  app.get('/api', (req, res) => {
+  app.get('/api/v1', (req, res) => {
     res.status(200).json({
       message: 'Welcome to Project Support',
     });
