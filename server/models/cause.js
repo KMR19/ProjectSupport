@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 mongoose.Promise = global.Promise;
 
-const causeSchema = mongoose.Schema({
+const causeSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   title: {
     type: String,

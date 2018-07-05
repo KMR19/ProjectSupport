@@ -102,3 +102,5 @@ export function deleteCause(req, res) {
       message: 'Cause is deleted',
       error: err.message,
     }))}
+
+export default Cause;
