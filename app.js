@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import logger from 'morgan';
 import dotenv from 'dotenv';
+import homeRoute from './server/routes/index';
 import mainRoutes from './server/routes/main';
 
 const app = express();
@@ -16,7 +17,6 @@ require('dotenv').config();
 // connect to mongoose
 mongoose.connect(process.env.MONGODB)
   .then(() => {
-    console.log('database connected.');
   })
   .catch(() => {
   });
@@ -26,14 +26,16 @@ mongoose.Promise = global.Promise;
 const port = 5035;
 
 // set up route
+homeRoute(app);
 app.use('/api/', mainRoutes);
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.status(200).json({
-    message: 'Welcome to Project Support',
+    message: 'This is Project Support, please see documentation for the proper routes.',
   });
 });
 
-app.listen(port, () => {
-  console.log(`Our server is running on port ${port}`);
-});
+app.listen(port);
+
+export default app;
+
