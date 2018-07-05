@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGODB)
 mongoose.Promise = global.Promise;
 
 // set up port number
-const port = 5035;
+const port = process.env.PORT || 7066;
 
 // set up route
 homeRoute(app);
