@@ -30,7 +30,7 @@ homeRoute(app);
 app.use('/api/', mainRoutes);
 
 app.get('*', (req, res) => {
-  res.status(200).json({
+  res.status(400).json({
     message: 'This is Project Support, please see documentation for the proper routes.',
   });
 });
