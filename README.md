@@ -37,7 +37,7 @@ Project Support is an open source platform that enable users share causes they'r
 * [Mongoose ODM](https://mongoosejs.com/) This makes it easy to write MongoDB validation by providing a straight-forward, schema-based solution to model to application data.
 
 ### Authors
-* [Black Developa](https://github.com/blackdevelopa)
+[Black Developa](https://github.com/blackdevelopa)
 
 ### License
 This project is available for use under the MIT License.
