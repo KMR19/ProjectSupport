@@ -1,9 +1,9 @@
 // call in the installed dependencies
 import express from 'express';
+import path from 'path';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import logger from 'morgan';
-import dotenv from 'dotenv';
 import homeRoute from './server/routes/index';
 import mainRoutes from './server/routes/main';
 
@@ -23,15 +23,15 @@ mongoose.connect(process.env.MONGODB)
 mongoose.Promise = global.Promise;
 
 // set up port number
-<<<<<<< HEAD
 const port = process.env.PORT || 7066;
-=======
-const port = 7066;
->>>>>>> develop
 
 // set up route
 homeRoute(app);
 app.use('/api/', mainRoutes);
+
+app.get('/documentation', (req, res) => {
+  res.sendFile(path.join(__dirname, 'README.md'));
+});
 
 app.get('*', (req, res) => {
   res.status(400).json({
